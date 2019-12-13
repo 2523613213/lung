@@ -34,11 +34,6 @@
 	</form>
 	
 	<a href = "/lung/Web/update.jsp">update</a>
-	<%
-		if(request.getAttribute("list")==null){
-			System.out.println("aaaaaa");
-		}
-	%>
 	<c:forEach items="${list}" var="it">
         <div>
             pathlogy:<c:out value="${it.getPathlogy()}" ></c:out><br>
