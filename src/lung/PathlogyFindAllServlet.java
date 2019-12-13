@@ -27,10 +27,9 @@ public class PathlogyFindAllServlet extends HttpServlet{
 		PathlogyDao pd = new PathlogyDao();
 		String sql = "select * from pathlogy limit "+a+","+b;
 		List<Pathlogy> list = pd.find(sql);
-		System.out.println(list.size());
 		//返回list
 		request.setAttribute("list",list);
-		//后面没写跳转语句，自行填写
+		 request.getRequestDispatcher("/Web/list.jsp").forward(request,response);
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

@@ -28,13 +28,12 @@ public class PathlogyFindTypeServlet extends HttpServlet{
 		//接受查找类别
 		String f = request.getParameter("type");
 		String sql = "select * from pathlogy where diagnosis = '"+f+"' limit "+a+","+b;
-		System.out.println(sql);
 		List<Pathlogy> list = pd.find(sql);
 		
 		//返回数据
 		request.setAttribute("list",list);
 		
-		//没有最后的跳转语句
+		 request.getRequestDispatcher("/Web/list.jsp").forward(request,response);
 	}
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

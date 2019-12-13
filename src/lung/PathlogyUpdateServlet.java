@@ -47,7 +47,7 @@ public class PathlogyUpdateServlet extends HttpServlet{
 			e.printStackTrace();
 		}
 		 
-		 //更新数据之后仍然没有跳转语句，总之看pathlogyAddServlet或者UserServlet最后的跳转
+		 response.sendRedirect(request.getContextPath()+"/Web/list.jsp");
 	 }
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response)

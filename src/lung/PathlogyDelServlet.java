@@ -18,7 +18,7 @@ public class PathlogyDelServlet extends HttpServlet{
 		 //接受待删除的条目对应的主键pathlogy病理号
 		 String willdel = request.getParameter("del");
 		 pd.del(willdel);
-		 //没有写删除完毕后的跳转语句，可以参照Add操作中的类似语句自行添加
+		 response.sendRedirect(request.getContextPath()+"/Web/list.jsp");
 	 }
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
